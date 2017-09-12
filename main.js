@@ -1,4 +1,4 @@
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, null, {
+var game = new Phaser.Game(800, 600, Phaser.AUTO, null, {
     preload: preload,
     create: create,
     update: update,
@@ -15,8 +15,6 @@ function preload() {
 var background;
 var ship;
 var asteroids;
-var asteroids_alive;
-var asteroids_array = [];
 var keymove;
 
 var bgm;
@@ -57,7 +55,7 @@ function fire() {
     if (ball){
         ball.frame = 0;
         ball.exists = true;
-        ball.reset(game.world.randomX * 5, -15);
+        ball.reset(game.world.randomX * 5, -200);
         ball.body.bounce.y = 1;
     }
 }
